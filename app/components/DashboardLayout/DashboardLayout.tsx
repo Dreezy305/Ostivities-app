@@ -207,7 +207,7 @@ function DashboardLayout({
             </Header>
 
             <Layout style={{ padding: "0 30px 30px" }}>
-              <Content className="flex flex-col space-y-8 py-8">
+              <Content className="flex flex-col space-y-8 py-8 h-full">
                 <div
                   className={`mx-auto text-center flex flex-row items-center justify-center pb-3 ${
                     !isValidElement(steppers) ? "hidden" : ""

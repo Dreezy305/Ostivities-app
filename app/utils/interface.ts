@@ -65,12 +65,15 @@ export type FieldType = {
 };
 
 export interface FormContextProps {
-  formState: FormState;
-  setFormStage: (stage: number) => void;
+  formState?: FormState;
+  setFormStage?: (stage: number) => void | any | undefined;
+  data?: any;
+  setFormValues?: any;
 }
 
 export interface FormState {
   stage: number | any;
+  data?: any;
 }
 
 export interface FormProviderProps {
