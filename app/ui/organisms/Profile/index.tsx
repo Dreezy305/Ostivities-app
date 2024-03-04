@@ -3,7 +3,7 @@ import OrganizationProfile from "./OrganizationProfile";
 import UserProfile from "./UserProfile";
 
 const Profile = () => {
-  const userType = "organization";
+  const userType = null;
   return userType === "organization" ? (
     <OrganizationProfile />
   ) : (

@@ -1,14 +1,14 @@
-'use client';
-import { Small } from '@/app/components//typography/Typography';
-import Auth from '@/app/utils/Auth';
-import { ACCOUNT_TYPE } from '@/app/utils/enums';
-import { Button, Checkbox, Col, Form, Input, Row, Select } from 'antd';
-import React, { useState } from 'react';
+"use client";
+import { Small } from "@/app/components//typography/Typography";
+import Auth from "@/app/utils/Auth";
+import { ACCOUNT_TYPE } from "@/app/utils/enums";
+import { Button, Checkbox, Col, Form, Input, Row, Select } from "antd";
+import React, { useState } from "react";
 
 function CreateAccount(): JSX.Element {
   const [form] = Form.useForm();
   const { Option } = Select;
-  const [val, setval] = useState<string>('');
+  const [val, setval] = useState<string>("");
 
   const onFinish = (value: object) => {
     console.log(value);
@@ -23,18 +23,18 @@ function CreateAccount(): JSX.Element {
       autoComplete="off"
       form={form}
       className="w-full font-BricolageGrotesqueRegular flex flex-col"
-      style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+      style={{ fontFamily: "BricolageGrotesqueRegular" }}
     >
       <Form.Item
         label="Choose an Account Type"
-        style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+        style={{ fontFamily: "BricolageGrotesqueRegular" }}
         className="font-BricolageGrotesqueRegular"
         help={
           !val ? null : (
             <span className="font-BricolageGrotesqueLight text-OWANBE_INFO">
               {val === ACCOUNT_TYPE.PERSONAL
-                ? 'Are you an individual looking to sell tickets? This account type is tailored for you.'
-                : 'Are you a registered business looking to sell tickets? This account type is tailored for you.'}
+                ? "Are you an individual looking to sell tickets? This account type is tailored for you."
+                : "Are you a registered business looking to sell tickets? This account type is tailored for you."}
             </span>
           )
         }
@@ -45,7 +45,7 @@ function CreateAccount(): JSX.Element {
           rules={[
             {
               required: true,
-              message: 'Please select an account type',
+              message: "Please select an account type",
             },
           ]}
           //@ts-ignore
@@ -58,15 +58,15 @@ function CreateAccount(): JSX.Element {
         </Form.Item>
       </Form.Item>
 
-      {val === 'ORGANISATION' ? (
+      {val === "ORGANISATION" ? (
         <Form.Item
           label="Registered Business Name"
-          style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+          style={{ fontFamily: "BricolageGrotesqueRegular" }}
           className="font-BricolageGrotesqueRegular !mt-3"
         >
           <Form.Item
             noStyle
-            rules={[{ required: true, message: 'Please input your email' }]}
+            rules={[{ required: true, message: "Please input your email" }]}
           >
             <Input
               type="email"
@@ -80,14 +80,14 @@ function CreateAccount(): JSX.Element {
           <Col span={12}>
             <Form.Item
               label="First Name"
-              style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+              style={{ fontFamily: "BricolageGrotesqueRegular" }}
               className="font-BricolageGrotesqueRegular !mt-3"
             >
               <Form.Item
                 name="firstname"
                 label="First Name"
                 noStyle
-                rules={[{ required: true, message: 'Please input first name' }]}
+                rules={[{ required: true, message: "Please input first name" }]}
               >
                 <Input
                   placeholder="Enter your first name "
@@ -100,14 +100,14 @@ function CreateAccount(): JSX.Element {
             <Form.Item
               name="lastname"
               label="Last Name"
-              style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+              style={{ fontFamily: "BricolageGrotesqueRegular" }}
               className="font-BricolageGrotesqueRegular !mt-3"
             >
               <Form.Item
                 name="lastname"
                 label="Last Name"
                 noStyle
-                rules={[{ required: true, message: 'Please input last name' }]}
+                rules={[{ required: true, message: "Please input last name" }]}
               >
                 <Input
                   placeholder="Enter your last name"
@@ -121,12 +121,12 @@ function CreateAccount(): JSX.Element {
 
       <Form.Item
         label="Email Address"
-        style={{ fontFamily: 'BricolageGrotesqueRegular' }}
+        style={{ fontFamily: "BricolageGrotesqueRegular" }}
         className="font-BricolageGrotesqueRegular"
       >
         <Form.Item
           noStyle
-          rules={[{ required: true, message: 'Please input your email' }]}
+          rules={[{ required: true, message: "Please input your email" }]}
         >
           <Input
             type="email"
@@ -142,7 +142,7 @@ function CreateAccount(): JSX.Element {
             label="Password"
             name="password"
             hasFeedback
-            rules={[{ required: true, message: 'Please input your password' }]}
+            rules={[{ required: true, message: "Please input your password" }]}
           >
             <Input.Password
               placeholder="Enter your password"
@@ -155,20 +155,20 @@ function CreateAccount(): JSX.Element {
           <Form.Item
             name="confirm"
             label="Confirm Password"
-            dependencies={['password']}
+            dependencies={["password"]}
             hasFeedback
             rules={[
               {
                 required: true,
-                message: 'Please confirm your password!',
+                message: "Please confirm your password!",
               },
               ({ getFieldValue }) => ({
                 validator(_, value) {
-                  if (!value || getFieldValue('password') === value) {
+                  if (!value || getFieldValue("password") === value) {
                     return Promise.resolve();
                   }
                   return Promise.reject(
-                    new Error('The new password that you entered do not match!')
+                    new Error("The new password that you entered do not match!")
                   );
                 },
               }),
@@ -197,7 +197,7 @@ function CreateAccount(): JSX.Element {
         }
       >
         <Checkbox>
-          Accept our{' '}
+          Accept our{" "}
           <a href="" className="text-OWANBE_PRY underline">
             terms and condition
           </a>
@@ -210,10 +210,10 @@ function CreateAccount(): JSX.Element {
           htmlType="submit"
           className="font-BricolageGrotesqueLight text-base"
           style={{
-            background: '#E20000',
-            borderRadius: '20px',
-            width: '100%',
-            height: '51px',
+            background: "#E20000",
+            borderRadius: "20px",
+            width: "100%",
+            height: "51px",
           }}
         >
           Sign Up
