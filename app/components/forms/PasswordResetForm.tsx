@@ -1,6 +1,6 @@
-"use client";
-import { Button, Form, Input } from "antd";
-import React from "react";
+'use client';
+import { Button, Form, Input } from 'antd';
+import React from 'react';
 
 function PasswordResetForm(): JSX.Element {
   const [form] = Form.useForm();
@@ -15,18 +15,18 @@ function PasswordResetForm(): JSX.Element {
       autoComplete="off"
       form={form}
       className="w-full font-BricolageGrotesqueRegular flex flex-col"
-      style={{ fontFamily: "BricolageGrotesqueRegular" }}
+      style={{ fontFamily: 'BricolageGrotesqueRegular' }}
     >
       <Form.Item
         label="Enter reset code"
-        style={{ fontFamily: "BricolageGrotesqueRegular" }}
+        style={{ fontFamily: 'BricolageGrotesqueRegular' }}
         className="font-BricolageGrotesqueRegular"
       >
         <Form.Item
-          name="firstname"
-          label="First Name"
+          name="resetcode"
+          label="Reset Code"
           noStyle
-          rules={[{ required: true, message: "Please input first name" }]}
+          rules={[{ required: true, message: 'Please input reset code' }]}
         >
           <Input
             placeholder="Enter your code"
@@ -39,7 +39,7 @@ function PasswordResetForm(): JSX.Element {
         label="New Password"
         name="password"
         hasFeedback
-        rules={[{ required: true, message: "Please input your password" }]}
+        rules={[{ required: true, message: 'Please input your password' }]}
       >
         <Input.Password
           placeholder="Enter your password"
@@ -50,20 +50,20 @@ function PasswordResetForm(): JSX.Element {
       <Form.Item
         name="confirm"
         label="Re-enter Password"
-        dependencies={["password"]}
+        dependencies={['password']}
         hasFeedback
         rules={[
           {
             required: true,
-            message: "Please confirm your password!",
+            message: 'Please confirm your password!',
           },
           ({ getFieldValue }) => ({
             validator(_, value) {
-              if (!value || getFieldValue("password") === value) {
+              if (!value || getFieldValue('password') === value) {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error("The new password that you entered do not match!")
+                new Error('The new password that you entered do not match!')
               );
             },
           }),
@@ -81,10 +81,10 @@ function PasswordResetForm(): JSX.Element {
           htmlType="submit"
           className="font-BricolageGrotesqueLight text-base"
           style={{
-            background: "#E20000",
-            borderRadius: "20px",
-            width: "100%",
-            height: "51px",
+            background: '#E20000',
+            borderRadius: '20px',
+            width: '100%',
+            height: '51px',
           }}
         >
           Reset Password

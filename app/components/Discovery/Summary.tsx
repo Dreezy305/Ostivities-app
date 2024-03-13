@@ -4,7 +4,7 @@ const Summary = ({ continueBtn }: { continueBtn?: boolean }) => {
   return (
     <section className="flex-1">
       <h2 className=" text-3xl text-center">Summary</h2>
-      <section className=" mt-20 px-20 border-l border-[#525252]">
+      <section className=" mt-14 px-20 h-4/5 border-l border-[#525252]">
         <div>
           <h3 className=" text-OWANBE_PRY text-xl">Event</h3>
           <span className="text-OWANBE_FADE">Concert with Davido</span>
@@ -33,7 +33,10 @@ const Summary = ({ continueBtn }: { continueBtn?: boolean }) => {
           </div>
           {continueBtn && (
             <div className="flex justify-center mt-12 mb-6">
-              <Link href="/Dashboard/payment" className="primary-btn">
+              <Link
+                href="/Dashboard/payment"
+                className="primary-btn hover:none"
+              >
                 Continue
               </Link>
             </div>

@@ -16,7 +16,7 @@ function OwanbeWebLayout({
 }): JSX.Element {
   return (
     <RootLayout>
-      <main className={`${className} min-h-screen overflow-hidden`}>
+      <main className={`${className} min-h-screen`}>
         <Header />
         {children}
         <Footer />

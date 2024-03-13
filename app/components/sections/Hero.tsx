@@ -1,11 +1,12 @@
-import LaptopHero from "@/public/laptop.png";
-import Z from "@/public/z.svg";
-import { ArrowRightOutlined } from "@ant-design/icons";
-import Image from "next/image";
-import React from "react";
-import Section from "./Section";
-import H3 from "@/app/ui/atoms/H3";
-import Button from "@/app/ui/atoms/Button";
+import LaptopHero from '@/public/laptop.png';
+import Z from '@/public/z.svg';
+import { ArrowRightOutlined } from '@ant-design/icons';
+import Image from 'next/image';
+import React from 'react';
+import Section from './Section';
+import H3 from '@/app/ui/atoms/H3';
+import Button from '@/app/ui/atoms/Button';
+import Link from 'next/link';
 
 function Hero(): JSX.Element {
   return (
@@ -23,13 +24,12 @@ function Hero(): JSX.Element {
               Connect, discover, and create lasting memories. Join now for a
               vibrant experience!
             </p>
-            <Button
-              className="lg:mx-0 max-w-xs lg:max-w-[30%]"
-              label="Get Started"
-              variant="secondary"
-              size="default"
-              suffixIcon={<ArrowRightOutlined />}
-            />
+            <Link
+              href="/Dashboard"
+              className=" bg-OWANBE_SECONDARY rounded-full text-white px-8 py-2"
+            >
+              <span className=" pr-1">Get Started</span> <ArrowRightOutlined />
+            </Link>
           </div>
           <div className="w-full md:w-full lg:w-1/2">
             <Image src={LaptopHero} alt="hero" className="ms-1" />

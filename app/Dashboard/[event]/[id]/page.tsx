@@ -1,9 +1,7 @@
 'use client';
 
 import DashboardLayout from '@/app/components/DashboardLayout/DashboardLayout';
-import { InstagramOutlined } from '@ant-design/icons';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const EventDetail = ({ params }: { params: { id: string } }) => {
@@ -30,11 +28,11 @@ const EventDetail = ({ params }: { params: { id: string } }) => {
         <div className="flex gap-12">
           <div className="relative w-fit rounded-[3.125rem] overflow-hidden">
             <Image
-              src="/images/placeholder.jpeg"
+              src="/images/placeholder.png"
               alt=""
               height={600}
               width={464}
-              className=" min-h-[600px] max-w-[400px]"
+              className=""
             />
             <div className="absolute inset-0 bg-image-card"></div>
           </div>
@@ -132,12 +130,12 @@ const EventDetail = ({ params }: { params: { id: string } }) => {
               amet, consectetur adipiscing elit. Fusce dapibus arcu iui{' '}
             </p>
             <div className="flex justify-center mt-12">
-              <Link
-                href="/Dashboard/tickets"
+              <button
+                onClick={() => router.push('/Dashboard/tickets')}
                 className="rounded-full bg-OWANBE_PRY px-24 py-3 text-white text-xl font-bold"
               >
                 Register
-              </Link>
+              </button>
             </div>
           </div>
         </div>

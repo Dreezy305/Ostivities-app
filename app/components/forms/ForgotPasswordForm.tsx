@@ -1,9 +1,9 @@
-"use client";
-import { Heading3, Paragraph } from "@/app/components/typography/Typography";
-import { Button, Form, Input, Space } from "antd";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React from "react";
+'use client';
+
+import { ArrowLeftOutlined } from '@ant-design/icons';
+import { Button, Form, Input } from 'antd';
+import { useRouter } from 'next/navigation';
+import React from 'react';
 
 function ForgotPasswordForm(): JSX.Element {
   const router = useRouter();
@@ -20,16 +20,16 @@ function ForgotPasswordForm(): JSX.Element {
       autoComplete="off"
       form={form}
       className="w-full font-BricolageGrotesqueRegular flex flex-col"
-      style={{ fontFamily: "BricolageGrotesqueRegular" }}
+      style={{ fontFamily: 'BricolageGrotesqueRegular' }}
     >
       <Form.Item
         label="Email Address"
-        style={{ fontFamily: "BricolageGrotesqueRegular" }}
+        style={{ fontFamily: 'BricolageGrotesqueRegular' }}
         className="font-BricolageGrotesqueRegular"
       >
         <Form.Item
           noStyle
-          rules={[{ required: true, message: "Please input your email" }]}
+          rules={[{ required: true, message: 'Please input your email' }]}
         >
           <Input
             type="email"
@@ -40,31 +40,34 @@ function ForgotPasswordForm(): JSX.Element {
       </Form.Item>
 
       <div className="flex flex-row items-center justify-between">
-        <span className="font-BricolageGrotesqueRegular font-normal text-OWANBE_LIGHT_DARK">
-          Remember me
-        </span>
+        <div
+          onClick={() => router.back()}
+          className="flex-center gap-2 cursor-pointer font-BricolageGrotesqueRegular font-normal text-OWANBE_LIGHT_DARK"
+        >
+          <ArrowLeftOutlined /> <span>I remember my password</span>
+        </div>
 
         <Button
           type="text"
           className="text-OWANBE_PRY  hover:text-OWANBE_PRY  font-BricolageGrotesqueSemiBold font-semibold cursor-pointer"
-          style={{ color: "#e20000" }}
+          style={{ color: '#e20000' }}
         >
           Re-send Code
         </Button>
       </div>
 
-      <Form.Item style={{ marginTop: "20px" }}>
+      <Form.Item style={{ marginTop: '20px' }}>
         <Button
           type="primary"
           htmlType="submit"
           className="font-BricolageGrotesqueLight text-base"
           style={{
-            background: "#E20000",
-            borderRadius: "20px",
-            width: "100%",
-            height: "51px",
+            background: '#E20000',
+            borderRadius: '20px',
+            width: '100%',
+            height: '51px',
           }}
-          onClick={() => router.push("/password-reset")}
+          onClick={() => router.push('/password-reset')}
         >
           Continue
         </Button>

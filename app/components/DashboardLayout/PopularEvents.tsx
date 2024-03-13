@@ -8,35 +8,35 @@ const PopularEvents = () => {
         title="Agbaya Linkup"
         about="hangout"
         status="sold out"
-        image="/images/wed.jpeg"
+        image="/images/wed.png"
         url="/Dashboard/popular/1"
       />
       <InfoCard
         title="Agbaya Linkup"
         about="hangout"
         status="sold out"
-        image="/images/wed.jpeg"
+        image="/images/wed.png"
         url="/Dashboard/popular/1"
       />
       <InfoCard
         title="Agbaya Linkup"
         about="hangout"
         status="sold out"
-        image="/images/wed.jpeg"
+        image="/images/wed.png"
         url="/Dashboard/popular/1"
       />
       <InfoCard
         title="Agbaya Linkup"
         about="hangout"
         status="sold out"
-        image="/images/wed.jpeg"
+        image="/images/wed.png"
         url="/Dashboard/popular/1"
       />
       <InfoCard
         title="Agbaya Linkup"
         about="hangout"
         status="sold out"
-        image="/images/wed.jpeg"
+        image="/images/wed.png"
         url="/Dashboard/popular/1"
       />
     </EventSection>

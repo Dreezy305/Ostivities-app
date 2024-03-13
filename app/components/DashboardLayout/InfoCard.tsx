@@ -13,13 +13,13 @@ const InfoCard = ({ status, title, about, image, url }: PropsI) => {
   return (
     <Link
       href={url}
-      className="block relative overflow-hidden h-[224px] rounded-[50px]"
+      className="block relative overflow-hidden h-[210px] rounded-[50px]"
     >
       <Image
         src={image}
         alt=""
-        width={236}
-        height={244}
+        width={230}
+        height={235}
         className="rounded-[50px] h-full w-full"
       />
       <div className="absolute inset-0 bg-image-card text-white">

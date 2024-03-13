@@ -22,13 +22,15 @@ const config: Config = {
     },
     extend: {
       fontSize: {
-        ss:'0.625rem'
+        ss: '0.625rem',
+        mx:'0.9375rem'
       },
       colors: {
         OWANBE_PRY: "#E20000",
         OWANBE_SECONDARY: "#19235B",
         OWANBE_NOTIFICATION: "#FADEDE",
-        OWANBE_FADE:'#484A4B',
+        OWANBE_FADE: '#484A4B',
+        OWAMBE_FADE_TEXT:'#706A70',
         OWANBE_INFO: "#A6264C",
         OWANBE_BACKGROUND: "#F7F7F7",
         OWANBE_BORDER: "#D0D4D4",

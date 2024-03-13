@@ -5,10 +5,20 @@ import React from 'react';
 import DiscoverEvents from '../components/DashboardLayout/DiscoverEvents';
 import PopularEvents from '../components/DashboardLayout/PopularEvents';
 import { Input, Select } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
 function Dashboard(): JSX.Element {
+  const header = (
+    <div className="flex-center justify-between w-full">
+      <span>Event Discovery</span>
+      <button className=" bg-OWANBE_PRY rounded-full px-4 py-2 text-xs font-semibold text-white">
+        {' '}
+        <PlusOutlined /> <span className="pl-1">Create New Event</span>
+      </button>
+    </div>
+  );
   return (
-    <DashboardLayout title="Event Discovery">
+    <DashboardLayout title={header}>
       <div className="flex flex-col gap-7">
         <DiscoverEvents />
         <div className="border-[1px] border-[#FADEDE] rounded-3xl p-8 shadow-md ">
@@ -36,7 +46,7 @@ function Dashboard(): JSX.Element {
                 />
               </label>
               <label htmlFor="type" className="w-full">
-                <span className=" text-OWANBE_PRY mb-1 block">Event State</span>
+                <span className=" text-OWANBE_PRY mb-1 block">Event Type</span>
                 <Select
                   defaultValue="Select event type"
                   className="w-full"

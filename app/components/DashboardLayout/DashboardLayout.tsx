@@ -1,4 +1,5 @@
 'use client';
+
 import { Label } from '@/app/components/typography/Typography';
 import FormProvider from '@/app/contexts/form-context/FormContext';
 import { NAV_LINKS } from '@/app/utils/data';
@@ -15,7 +16,7 @@ import type { MenuProps } from 'antd';
 import { Avatar, Badge, Dropdown, Layout, Menu, Space, theme } from 'antd';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { isValidElement, useState } from 'react';
 
 const items1: MenuProps['items'] = [
@@ -75,6 +76,8 @@ function DashboardLayout({
   extraComponents,
 }: IDashboard): JSX.Element {
   const router = useRouter();
+  const pathname = usePathname();
+
   const { Header, Sider, Content } = Layout;
   const [collapsed, setCollapsed] = useState(true);
 
@@ -85,6 +88,12 @@ function DashboardLayout({
   const onClick: MenuProps['onClick'] = (e: any) => {
     router.push(e?.key);
   };
+
+  const pathCheck =
+    pathname.split('/').includes('settings') ||
+    pathname.split('/').includes('events');
+
+  // console.log(pathCheck);
 
   return (
     <FormProvider>
@@ -117,17 +126,19 @@ function DashboardLayout({
               onClick={() => setCollapsed(!collapsed)}
             />
           </div>
-          <div className="flex flex-row items-center space-x-8">
-            {NAV_LINKS.map((link: INavLinks) => (
-              <Link
-                href={link.link}
-                key={link.link + link.name}
-                className="font-BricolageGrotesqueMedium font-medium text-base text-black"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
+          {!pathCheck && (
+            <div className="flex flex-row items-center space-x-8">
+              {NAV_LINKS.map((link: INavLinks) => (
+                <Link
+                  href={link.link}
+                  key={link.link + link.name}
+                  className="font-BricolageGrotesqueMedium font-medium text-base text-black"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          )}
 
           <Space
             direction="horizontal"
@@ -172,7 +183,7 @@ function DashboardLayout({
             breakpoint="lg"
             trigger={null}
             collapsible
-            collapsed={collapsed}
+            collapsed={!collapsed}
             zeroWidthTriggerStyle={{
               background: 'green !important',
               fontFamily: 'BricolageGrotesqueMedium !important',
@@ -211,8 +222,8 @@ function DashboardLayout({
                 backgroundColor: '#ffffff',
               }}
             >
-              <div className="demo-logo flex flex-row items-center space-x-12">
-                <h5 className="font-BricolageGrotesqueRegular font-normal text-black text-3xl">
+              <div className="demo-logo w-full">
+                <h5 className="w-full font-BricolageGrotesqueRegular font-normal text-black text-3xl">
                   {title}
                 </h5>
               </div>
@@ -249,15 +260,12 @@ function DashboardLayout({
                 )}
                 <div
                   style={{
-                    padding: 30,
-                    margin: 0,
-                    // overflowY: "scroll",
-                    // overflowX: 'hidden',
                     borderRadius: '30px',
                     border: '1px solid #E5E5E5',
                     boxShadow: '0px 8px 24px 0px #00000014',
                     background: 'linear-gradient(0deg, #FFFFFF, #FFFFFF)',
                   }}
+                  className=" px-12 py-16"
                 >
                   <div>{children}</div>
                 </div>
