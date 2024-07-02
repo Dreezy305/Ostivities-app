@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import placeholderIMG from '../../../../public/placeholder.png';
+import placeholderIMG from '../../../../public/images/placeholder.png';
 // import FolderIcon from '../../../utils/icon';
 
 const placeholderImages = [

@@ -23,12 +23,12 @@ const EventDetail = ({ params }: { params: { id: string } }) => {
   );
 
   return (
-    <DashboardLayout title={title}>
+    <DashboardLayout title={title} isLoggedIn>
       <section>
         <div className="flex gap-12">
           <div className="relative w-fit rounded-[3.125rem] overflow-hidden">
             <Image
-              src="/images/placeholder.png"
+              src="/images/placeholder-6.png"
               alt=""
               height={600}
               width={464}

@@ -7,7 +7,7 @@ import React from 'react';
 
 function AuthLayout({ children }: IAuthLayout): JSX.Element {
   return (
-    <main className="overflow-hidden h-screen">
+    <main className="overflow-auto">
       <Header />
       <section className="overflow-hidden bg-OWANBE_AUTH_BG min-h-screen">
         <div className="md:container md:mx-auto px-5 pt-8 pb-12 lg:pb-0 md:pt-6 lg:pt-0 relative">

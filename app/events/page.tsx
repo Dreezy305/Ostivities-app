@@ -1,6 +1,5 @@
 'use client';
 
-import DashboardLayout from '@/app/components/DashboardLayout/DashboardLayout';
 import React from 'react';
 import DiscoverEvents from '../components/DashboardLayout/DiscoverEvents';
 import PopularEvents from '../components/DashboardLayout/PopularEvents';
@@ -9,8 +8,9 @@ import { PlusOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 import { Country, State } from "country-state-city";
 import { EVENT_TYPES } from '../utils/data';
+import DashboardLayout from '../components/DashboardLayout/DashboardLayout';
 
-function Dashboard(): JSX.Element {
+function PublicEvents(): JSX.Element {
   const route = useRouter();
   const COUNTRY_JSON: any = Country.getAllCountries().map((i: any) => {
     return { value: i?.name, label: i?.name, isoCode: i?.isoCode };
@@ -29,7 +29,7 @@ const STATE_BY_COUNTRYCODE = (stateCode: string): { label: string; value: string
     </div>
   );
   return (
-    <DashboardLayout title={header} isLoggedIn>
+    <DashboardLayout title={header}>
       <div className="flex flex-col gap-7">
         <DiscoverEvents />
         <div className="border-[1px] border-[#FADEDE] rounded-3xl p-8 shadow-md ">
@@ -78,4 +78,4 @@ const STATE_BY_COUNTRYCODE = (stateCode: string): { label: string; value: string
   );
 }
 
-export default Dashboard;
+export default PublicEvents;

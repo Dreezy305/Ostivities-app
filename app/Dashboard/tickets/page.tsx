@@ -24,7 +24,7 @@ const Tickets = () => {
   );
 
   return (
-    <DashboardLayout title={title}>
+    <DashboardLayout title={title} isLoggedIn>
       <section className="flex gap-12">
         <section className="flex-1 pr-16">
           <div className="flex-center justify-between">

@@ -27,6 +27,7 @@ function Settings() {
           handleCurrentTab={selectCurrentTab}
         />
       }
+      isLoggedIn
     >
       {currentTab === "Profile" ? (
         <Profile />

@@ -82,20 +82,20 @@ function Details(): JSX.Element {
             className=""
             content={
               formStep === 1
-                ? "Hello, Rose."
+                ? "Hello, Rose"
                 : formStep === 2
-                ? "Event Image."
-                : "Event Ticket."
+                ? "Event Image"
+                : "Event Ticket"
             }
           />
           <Paragraph
             className="text-OWANBE_PRY text-xl font-normal font-BricolageGrotesqueRegular"
             content={
               formStep === 1
-                ? "Lets get you started by creating your event"
+                ? "Lets get you started by creating your event."
                 : formStep === 2
-                ? "Select the appearance of your event page here"
-                : "Ostivities is free for free events. For paid events, we charge a percentage as a transaction fee."
+                ? "Upload the image that will appear on your event page here."
+                : "Ostivities is free for free events. For paid events, we charge a transaction fee."
             }
             styles={{ fontWeight: "normal !important" }}
           />
@@ -601,11 +601,11 @@ function Details(): JSX.Element {
 
                   <div className="flex flex-col space-y-3">
                     <h5 className="font-BricolageGrotesqueSemiBold font-semibold text-xl">
-                      Create your ticket
+                      Create your tickets
                     </h5>
                     <p className="font-BricolageGrotesqueRegular font-normal text-sm text-OWANBE_DARK_LIGHT">
-                      Create your ticket here, it will only take less than a
-                      minute
+                      Create your tickets here, it will only take less than a
+                      minute.
                     </p>
                   </div>
                   <Button

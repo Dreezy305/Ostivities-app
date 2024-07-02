@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum ACCOUNT_TYPE {
   PERSONAL = "PERSONAL",
   ORGANISATION = "ORGANISATION",
@@ -31,8 +33,12 @@ export interface IDashboard {
   tab?: React.ReactNode;
   steppers?: React.ReactNode;
   extraComponents?: React.ReactNode;
+  isLoggedIn?: Boolean | React.ReactNode;
 }
 
+export interface IHeader {
+  isLoggedIn?: Boolean | React.ReactNode;
+}
 export interface IFormProps {
   formStep?: number;
   nextFormStep?: () => void;

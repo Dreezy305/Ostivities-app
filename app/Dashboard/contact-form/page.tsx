@@ -41,7 +41,7 @@ const ContactForm = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
-    <DashboardLayout title={title}>
+    <DashboardLayout title={title} isLoggedIn>
       <section className="flex gap-12">
         <section className="flex-1 pr-16">
           <div className=" bg-OWANBE_NOTIFICATION px-4 py-2 border-[0.5px] border-OWANBE_PRY rounded-[0.625rem]">
