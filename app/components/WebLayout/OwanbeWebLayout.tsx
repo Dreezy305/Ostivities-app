@@ -1,7 +1,7 @@
-import RootLayout from '@/app/layout';
-import React from 'react';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
+import RootLayout from "@/app/layout";
+import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 function OwanbeWebLayout({
   children,
@@ -18,6 +18,7 @@ function OwanbeWebLayout({
     <RootLayout>
       <main className={`${className} min-h-screen`}>
         <Header />
+
         {children}
         <Footer />
       </main>

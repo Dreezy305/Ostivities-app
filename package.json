@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "production": "npm run build && npm run start"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.18.0",

@@ -1,12 +1,18 @@
 'use client';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message, notification } from 'antd';
 import React from 'react';
 
 function PasswordResetForm(): JSX.Element {
   const [form] = Form.useForm();
+
   const onFinish = (value: object) => {
     console.log(value);
   };
+
+  const resendCode = () => {
+    message.success('Reset code has been re-sent to your email');
+  };
+
   return (
     <Form
       name="validateOnly"
@@ -33,7 +39,11 @@ function PasswordResetForm(): JSX.Element {
               placeholder="Enter your code"
               className="placeholder:font-BricolageGrotesqueRegular flex-1"
             />
-            <button className=" text-OWANBE_PRY text-xs font-semibold">
+            <button
+              type="button"
+              onClick={resendCode}
+              className="text-OWANBE_PRY text-xs font-semibold"
+            >
               Re-send code
             </button>
           </div>

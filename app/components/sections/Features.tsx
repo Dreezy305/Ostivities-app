@@ -1,4 +1,5 @@
 import { FEATURES } from "@/app/utils/data";
+import LaptopHero from '@/public/laptop.svg';
 import FeatureBg from "@/public/feature.png";
 import Image from "next/image";
 import React from "react";
@@ -10,7 +11,7 @@ function Features(): JSX.Element {
     <Section>
       <div className="flex flex-col-reverse space-y-8 lg:flex lg:flex-row lg:space-x-8 lg:items-center xl:flex xl:flex-row xl:space-x-8 xl:items-center">
         <div className="w-full md:w-4/5 md:mx-auto lg:mx-auto xl:mx-auto lg:w-1/2 xl:w-1/2">
-          <Image src={FeatureBg} alt="hero" className="ms-1" />
+          <Image src={LaptopHero} alt="hero" className="ms-1" />
         </div>
         <div className="flex flex-col space-y-5 w-full md:w-4/5 md:mx-auto lg:mx-0 xl:mx-0 lg:w-1/2 xl:w-1/2">
           <div className="flex flex-col">
@@ -18,7 +19,7 @@ function Features(): JSX.Element {
               content="Features"
               className="text-OWANBE_PRY text-lg tracking-wider uppercase"
             />
-            <Heading3 content="Create Event, Share the Joy" className="w-3/4" />
+            <Heading3 content="Create Event, Share the Joy" className="w-4/4" />
           </div>
           <div className="flex flex-col space-y-4">
             {FEATURES.map((i, index: any) => {

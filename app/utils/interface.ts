@@ -1,4 +1,4 @@
-import React from "react";
+import React, { HTMLAttributeAnchorTarget } from "react";
 
 export enum ACCOUNT_TYPE {
   PERSONAL = "PERSONAL",
@@ -6,6 +6,8 @@ export enum ACCOUNT_TYPE {
 }
 
 export interface INavLinks {
+  target: HTMLAttributeAnchorTarget | undefined;
+  rel: string | undefined;
   link: string;
   name: string;
 }

@@ -46,7 +46,7 @@ const EventPageAppearance: React.FC = () => {
     <Space direction="vertical" size={"large"}>
       <Space direction="vertical" size={"small"}></Space>
       <div className="flex gap-12">
-        <div className="relative w-[424px] h-[520px] rounded-[3.125rem] overflow-hidden">
+        <div className="relative w-[424px] h-[580px] rounded-[3.125rem] overflow-hidden">
           <Image
             src={imageUrl}
             alt="Event Image"
@@ -91,20 +91,37 @@ const EventPageAppearance: React.FC = () => {
                 <div>xx:xx - xx:xx</div>
               </div>
             </div>
-            <div className="flex gap-3 items-center">
-              <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex items-center justify-center">
-                <Image
-                  src="/icons/location.svg"
-                  alt=""
-                  height={30}
-                  width={30}
-                />
+             {/* Location 1 */}
+             <div className="flex gap-3 items-center">
+                <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex items-center justify-center">
+                  <Image
+                    src="/icons/location.svg"
+                    alt=""
+                    height={30}
+                    width={30}
+                  />
+                </div>
+                <div>
+                  <div className="text-sm" style={{ fontWeight: 600 }}>Location</div>
+                  <div>xxxxxxxx</div>
+                </div>
               </div>
-              <div>
-                <div className="text-sm" style={{ fontWeight: 600 }}>Location</div>
-                <div>xxxxxxxx</div>
+
+              {/* Location 2 */}
+              <div className="flex gap-3 items-center">
+                <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex items-center justify-center">
+                  <Image
+                    src="/icons/host.svg"
+                    alt=""
+                    height={30}
+                    width={30}
+                  />
+                </div>
+                <div>
+                  <div className="text-sm" style={{ fontWeight: 600 }}>Host</div>
+                  <div>Onome Rose</div>
+                </div>
               </div>
-            </div>
             <div className="flex gap-3 items-center">
               <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex items-center justify-center">
                 <Image src="/icons/phone.svg" alt="" height={30} width={30} />
@@ -150,7 +167,9 @@ const EventPageAppearance: React.FC = () => {
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
             Lorem ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem
-            ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem
+            ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum 
+            Lorem ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem  ipsum Lorem
+            ipsum Lorem  ipsum Lorem  ipsum 
           </p>
         </div>
       </div>

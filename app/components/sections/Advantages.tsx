@@ -1,5 +1,5 @@
 import { ADVANTAGES } from "@/app/utils/data";
-import AdvantagesBg from "@/public/advantages.png";
+import AdvantagesBg from "@/public/advantages.svg"; 
 import Image from "next/image";
 import React from "react";
 import { Heading3, Paragraph, Small } from "../typography/Typography";

@@ -13,7 +13,7 @@ const inter = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: "Ostivities",
-  description: "Event creation made easy",
+  description: "Revolutionizing Event Management",
 };
 
 export default function RootLayout({

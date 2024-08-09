@@ -9,15 +9,15 @@ import Image from "next/image";
 
 import EventCreation from "@/public/EventCreation.svg";
 
-import { CompassOutlined, FileAddOutlined, QuestionCircleOutlined, QuestionOutlined, SettingOutlined } from "@ant-design/icons";
+import { CompassOutlined, FieldTimeOutlined, FileAddOutlined, PlusCircleOutlined, QuestionCircleOutlined, QuestionOutlined, SettingOutlined } from "@ant-design/icons";
 import { createElement } from "react";
 import React from "react";
 
 const items2: MenuProps['items'] = [
   { icon: CompassOutlined, title: 'Discovery', link: '/Dashboard' },
-  { icon: FileAddOutlined, title: 'Create Event', link: '/Dashboard/' },
+  { icon: PlusCircleOutlined, title: 'Create Event', link: '/Dashboard/' },
   { icon: SettingOutlined, title: 'Settings', link: '/Dashboard/settings' },
-  { icon: QuestionCircleOutlined, title: 'Coming Soon', link: '/Dashboard/' },
+  { icon: FieldTimeOutlined, title: 'Coming Soon', link: '/Dashboard/coming-soon' },
 ].map((item) => {
   const key = item.link;
 

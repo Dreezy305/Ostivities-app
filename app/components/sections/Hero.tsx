@@ -1,11 +1,10 @@
-import LaptopHero from '@/public/laptop.png';
+import FeatureBg from "@/public/feature.svg";
 import Z from '@/public/z.svg';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
 import React from 'react';
 import Section from './Section';
 import H3 from '@/app/ui/atoms/H3';
-import Button from '@/app/ui/atoms/Button';
 import Link from 'next/link';
 
 function Hero(): JSX.Element {
@@ -19,7 +18,7 @@ function Hero(): JSX.Element {
               className="w-full text-center lg:text-left md:w-full md:text-center lg:w-3/4"
             />
 
-            <p className="w-full md:w-full font-BricolageGrotesqueMedium text-center lg:text-left lg:w-[86%] text-OWANBE_ASH text-lg">
+            <p className="w-full md:w-full font-BricolageGrotesqueMedium text-center lg:text-left lg:w-[89%] text-OWANBE_ASH text-lg">
             Join Ostivities and make every celebration unforgettable! Connect, discover, 
             and create lasting memories with ease. Dive into a world of vibrant events today!
             </p>
@@ -31,12 +30,11 @@ function Hero(): JSX.Element {
             </Link>
           </div>
           <div className="w-full md:w-full lg:w-1/2">
-            <Image src={LaptopHero} alt="hero" className="ms-1" />
+            <Image src={FeatureBg} alt="hero" className="ms-1" />
           </div>
         </div>
-
-        <div className="hidden md:hidden lg:block lg:w-1/2 text-left pt-8 lg:pt-0">
-          <Image src={Z} alt="hero" className="ms-0 pt-8 md:pt-8 lg:pt-0" />
+        <div className="hidden md:hidden lg:block lg:w-2/2 text-left pt-8 lg:pt-0">
+        <Image src={Z} alt="hero" className="ms-0 pt-8 md:pt-8 lg:pt-0" />
         </div>
       </div>
     </Section>

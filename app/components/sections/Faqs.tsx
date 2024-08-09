@@ -20,7 +20,7 @@ function Faqs(): JSX.Element {
           />
           <Heading3
             content="Frequently asked questions"
-            className="w-full md:w-full lg:w-3/4 xl:w-3/4 capitalize"
+            className="w-full md:w-full lg:w-4/4 xl:w-3/4 capitalize"
           />
         </div>
         <Accordion />

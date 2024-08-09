@@ -82,6 +82,22 @@ const EventDetail = ({ params }: { params: { id: string } }) => {
               </div>
               <div className="flex gap-3">
                 <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex-center justify-center">
+                  <Image
+                    src="/icons/host.svg"
+                    alt=""
+                    height={30}
+                    width={30}
+                  />
+                </div>
+                <div>
+                  <div className="text-sm" style={{ fontWeight: 600 }}>Host</div>
+                  <div>
+                  <div>Onome Rose</div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <div className="bg-OWANBE_PRY/20 p-2 rounded-xl flex-center justify-center">
                   <Image src="/icons/phone.svg" alt="" height={30} width={30} />
                 </div>
                 <div>

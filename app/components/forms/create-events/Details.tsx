@@ -2,6 +2,7 @@
 import EventPageAppearance from "@/app/components/forms/create-events/EventPageAppearance";
 import AddTicketModal from "@/app/components/OstivitiesModal/AddTicket";
 import EventTicketTable from "@/app/components/Tables/EventTicket";
+import LocationSearch from "@/app/components/LocationSearch";
 import {
   Heading5,
   Label,
@@ -29,6 +30,7 @@ import {
 } from "@ant-design/icons";
 import {
   Button,
+  Modal,
   Col,
   DatePicker,
   Input,
@@ -37,10 +39,11 @@ import {
   Select,
   Space,
   Upload,
+  Popover,
 } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 function Details(): JSX.Element {
@@ -56,6 +59,7 @@ function Details(): JSX.Element {
   const {
     handleSubmit,
     control,
+    setValue,
     watch,
     trigger,
   } = useForm<IFormInput>({
@@ -104,6 +108,34 @@ function Details(): JSX.Element {
     }
   };
 
+  
+
+    const [popoverVisible, setPopoverVisible] = useState(false);
+    const popoverRef = useRef<HTMLDivElement>(null);
+  
+    const handleSelectLocation = (address: string) => {
+      setValue("eventAddress", address); // Update the form field value
+      setPopoverVisible(false); // Close the popover
+    };
+  
+    const handleClickOutside = (event: MouseEvent) => {
+      if (popoverRef.current && !popoverRef.current.contains(event.target as Node)) {
+        setPopoverVisible(false);
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
+  
+    const content = (
+      <div style={{ padding: 10 }} ref={popoverRef}>
+        <LocationSearch onSelectLocation={handleSelectLocation} />
+      </div>
+    );
 
   return (
     <Fragment>
@@ -255,21 +287,38 @@ function Details(): JSX.Element {
                     )}
                   />
 
-                  <Controller
-                    name="eventAddress"
-                    control={control}
-                    render={({ field }) => (
-                      <Space direction="vertical" size={"small"}>
-                        <Label
-                          content="Event Address"
-                          className=""
-                          htmlFor="eventName"
-                        />
-                        <Input {...field} placeholder="Enter Address" />
-                      </Space>
-                    )}
-                  />
-                </div>
+<Controller
+  name="eventAddress"
+  control={control}
+  render={({ field }) => (
+    <Space direction="vertical" size={"small"} style={{ width: '100%' }}>
+      <label htmlFor="eventAddress">Event Address</label>
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        <Input 
+          {...field} 
+          placeholder="Enter Address" 
+          style={{ flex: 1, minWidth: '200px', maxWidth: 'calc(100% - 128px)' }} 
+        />
+        <Popover
+          content={content}
+          title="Search for a Location"
+          trigger="click"
+          open={popoverVisible}
+        >
+          <Button
+            type="default"
+            style={{ borderRadius: '5px', minWidth: '120px' }}
+            onClick={() => setPopoverVisible(!popoverVisible)}
+          >
+            Select on Map
+          </Button>
+        </Popover>
+      </div>
+    </Space>
+  )}
+/>
+
+    </div>
 
                 <div className="flex flex-col space-y-4 pl-6">
                   <Controller

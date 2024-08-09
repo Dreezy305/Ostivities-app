@@ -100,7 +100,7 @@ function AddTicketModal({ open, onCancel, onOk }: IModal): JSX.Element {
                   }
                 }}
                 style={{
-                  borderRadius: "16px",
+                  borderRadius: "20px",
                   fontFamily: "BricolageGrotesqueMedium",
                 }}
               >
